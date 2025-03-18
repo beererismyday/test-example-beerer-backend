@@ -14,7 +14,11 @@ fastify.addHook('onRequest', (request, reply, done) => {
 fastify.get("/users", async (request, reply) => {
     return getUsers();
 });
-fastify.listen({ port: 3000 }, (err, address) => {
+
+const PORT = Number(process.env.PORT) || 3000;
+const HOST = "0.0.0.0";
+
+fastify.listen({ port: PORT, host: HOST }, (err, address) => {
     if (err) {
         fastify.log.error(err);
         process.exit(1);
