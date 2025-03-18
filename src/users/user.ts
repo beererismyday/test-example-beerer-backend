@@ -63,7 +63,7 @@ export const getUsers: any = async () => {
 
             if (user.address && user.address.postalCode) {
                 const postal_code = user.address.postalCode;
-                let full_name = `${user.firstName}_${user.lastName}`
+                let full_name = `${user.firstName}${user.lastName}`
                 acc[department_name].addressUser[full_name] = postal_code;
             }
             return acc;
