@@ -23,7 +23,7 @@ export const getUsers: any = async () => {
         const departments = data.users.map((res: any) => res.company.department)
         const groupedByDepartment = data.users.reduce((acc: { [key: string]: Department }, user: any) => {
             let department_name = user.company.department;
-            department_name = department_name.replace(/ /g, "_");
+            // department_name = department_name.replace(/ /g, "_");
             if (!acc[department_name]) {
                 acc[department_name] = {
                     male: 0,
